@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Orientation Viewer</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="gps_coordinates">GPS Coordinates</string>
+    <string name="enable_gps">Your GPS is disabled, do you wish to enable it ?</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="sensors">Sensors</string>
+    <string name="azimuth">Azimuth</string>
+    <string name="pitch">Pitch</string>
+    <string name="roll">Roll</string>
+    <string name="altitude">Altitude</string>
+</resources>

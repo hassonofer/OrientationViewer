@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".GpsActivity">
+
+    <!-- GPS -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gps_coordinates"
+        android:textSize="@dimen/header_text_size"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/latitude"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/TextView_gps_latitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:layout_marginLeft="@dimen/table_margin_horizontal"
+                android:layout_marginRight="@dimen/table_margin_horizontal" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/longitude"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/TextView_gps_longitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:layout_marginLeft="@dimen/table_margin_horizontal"
+                android:layout_marginRight="@dimen/table_margin_horizontal"/>
+        </TableRow>
+    </TableLayout>
+
+    <!-- Separator -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/separator_height"
+        android:layout_marginTop="@dimen/separator_margin_vertical"
+        android:layout_marginBottom="@dimen/separator_margin_vertical"
+        android:layout_marginLeft="@dimen/separator_margin_horizontal"
+        android:layout_marginRight="@dimen/separator_margin_horizontal"
+        android:background="@color/separator_color" />
+
+    <!-- Sensors -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sensors"
+        android:textSize="@dimen/header_text_size"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/azimuth"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/TextView_azimuth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:layout_marginLeft="@dimen/table_margin_horizontal"
+                android:layout_marginRight="@dimen/table_margin_horizontal"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pitch"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/TextView_pitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:layout_marginLeft="@dimen/table_margin_horizontal"
+                android:layout_marginRight="@dimen/table_margin_horizontal"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/roll"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/TextView_roll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:layout_marginLeft="@dimen/table_margin_horizontal"
+                android:layout_marginRight="@dimen/table_margin_horizontal"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/altitude"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/TextView_altitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:layout_marginLeft="@dimen/table_margin_horizontal"
+                android:layout_marginRight="@dimen/table_margin_horizontal"/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
