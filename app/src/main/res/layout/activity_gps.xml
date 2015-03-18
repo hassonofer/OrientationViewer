@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_size"
                 android:layout_marginLeft="@dimen/table_margin_horizontal"
-                android:layout_marginRight="@dimen/table_margin_horizontal"/>
+                android:layout_marginRight="@dimen/table_margin_horizontal" />
         </TableRow>
     </TableLayout>
 
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_size"
                 android:layout_marginLeft="@dimen/table_margin_horizontal"
-                android:layout_marginRight="@dimen/table_margin_horizontal"/>
+                android:layout_marginRight="@dimen/table_margin_horizontal" />
         </TableRow>
         <TableRow>
             <TextView
@@ -102,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_size"
                 android:layout_marginLeft="@dimen/table_margin_horizontal"
-                android:layout_marginRight="@dimen/table_margin_horizontal"/>
+                android:layout_marginRight="@dimen/table_margin_horizontal" />
         </TableRow>
         <TableRow>
             <TextView
@@ -117,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_size"
                 android:layout_marginLeft="@dimen/table_margin_horizontal"
-                android:layout_marginRight="@dimen/table_margin_horizontal"/>
+                android:layout_marginRight="@dimen/table_margin_horizontal" />
         </TableRow>
         <TableRow>
             <TextView
@@ -132,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_size"
                 android:layout_marginLeft="@dimen/table_margin_horizontal"
-                android:layout_marginRight="@dimen/table_margin_horizontal"/>
+                android:layout_marginRight="@dimen/table_margin_horizontal" />
         </TableRow>
     </TableLayout>
 </LinearLayout>
