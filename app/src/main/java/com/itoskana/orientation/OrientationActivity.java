@@ -15,6 +15,8 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -41,10 +43,13 @@ public class OrientationActivity extends Activity {
     private MovingAverage roll;
     private MovingAverage altitude;
 
+    private Button bt_freeze;
+    private boolean frozen;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gps);
+        setContentView(R.layout.activity_orientation);
 
         // GPS
         tv_latitude = (TextView) findViewById(R.id.TextView_gps_latitude);
@@ -54,8 +59,10 @@ public class OrientationActivity extends Activity {
 
         location_listener = new LocationListener() {
             public void onLocationChanged(Location location) {
-                tv_latitude.setText(String.valueOf(location.getLatitude()));
-                tv_longitude.setText(String.valueOf(location.getLongitude()));
+                if(frozen == false) {
+                    tv_latitude.setText(String.valueOf(location.getLatitude()));
+                    tv_longitude.setText(String.valueOf(location.getLongitude()));
+                }
             }
 
             public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -92,7 +99,9 @@ public class OrientationActivity extends Activity {
             public void onSensorChanged(SensorEvent event) {
                 if(event.sensor.getType() == Sensor.TYPE_PRESSURE) {
                     altitude.input(SensorManager.getAltitude(SensorManager.PRESSURE_STANDARD_ATMOSPHERE, event.values[0]));
-                    tv_altitude.setText(String.valueOf(altitude.getAverage()));
+
+                    if(frozen == false)
+                        tv_altitude.setText(String.valueOf(altitude.getAverage()));
                 }
 
                 if(event.sensor.getType() == Sensor.TYPE_ACCELEROMETER)
@@ -111,11 +120,14 @@ public class OrientationActivity extends Activity {
 
                         SensorManager.getOrientation(r, orientation);
                         azimuth.input(orientation[0]);
-                        tv_azimuth.setText(String.valueOf((azimuth.getAverage() * 180 / Math.PI) + 180));
                         pitch.input(orientation[1]);
-                        tv_pitch.setText(String.valueOf(pitch.getAverage() * 180 / Math.PI));
                         roll.input(orientation[2]);
-                        tv_roll.setText(String.valueOf(roll.getAverage() * 180 / Math.PI));
+
+                        if(frozen == false) {
+                            tv_azimuth.setText(String.valueOf((azimuth.getAverage() * 180 / Math.PI) + 180));
+                            tv_pitch.setText(String.valueOf(pitch.getAverage() * 180 / Math.PI));
+                            tv_roll.setText(String.valueOf(roll.getAverage() * 180 / Math.PI));
+                        }
                     }
                 }
             }
@@ -124,6 +136,22 @@ public class OrientationActivity extends Activity {
             public void onAccuracyChanged(Sensor sensor, int accuracy) {
             }
         };
+
+        // Freeze / Unfreeze button
+        frozen = false;
+        bt_freeze = (Button) findViewById(R.id.Button_freeze);
+        bt_freeze.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                frozen = !frozen;
+
+                if(frozen == false)
+                    bt_freeze.setText(getString(R.string.freeze));
+
+                else
+                    bt_freeze.setText(getString(R.string.unfreeze));
+            }
+        });
     }
 
     @Override

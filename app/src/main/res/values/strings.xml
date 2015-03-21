@@ -11,4 +11,6 @@
     <string name="pitch">Pitch</string>
     <string name="roll">Roll</string>
     <string name="altitude">Altitude</string>
+    <string name="freeze">Freeze</string>
+    <string name="unfreeze">Unfreeze</string>
 </resources>

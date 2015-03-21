@@ -6,7 +6,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context=".GpsActivity">
+    tools:context=".OrientationActivity">
 
     <!-- GPS -->
     <TextView
@@ -135,4 +135,16 @@
                 android:layout_marginRight="@dimen/table_margin_horizontal" />
         </TableRow>
     </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/separator_height"
+        android:layout_marginTop="@dimen/separator_margin_vertical"
+        android:layout_marginBottom="@dimen/separator_margin_vertical" />
+
+    <Button
+        android:id="@+id/Button_freeze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/freeze" />
 </LinearLayout>
